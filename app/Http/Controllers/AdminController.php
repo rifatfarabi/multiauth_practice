@@ -6,12 +6,13 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function adminLogin(){
-        return view('layouts.admin_login');
+    public function __construct()
+    {
+        $this->middleware('guest');
     }
 
-    public function adminDashboard(){
-        return view('dashboard.admin_dashboard');
+    public function adminLogin(){
+        return view('layouts.admin_login');
     }
 
 }
